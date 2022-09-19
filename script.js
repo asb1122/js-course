@@ -1,41 +1,19 @@
+let numbersOfFilms = +prompt('Сколько фильмоы вы уже посмотрели?', '');
 
-'use strict';
-
-let number = 4.6;
-
-console.log(4/0);
-console.log('string' * 9);
-
-const person = `Alex`;
-
-const bool = false;
-
-const obj = {
-    name: 'alex',
-    age: 53,
-    isMarried: false,
-    abc: {
-        def: {
-
-        },
-        ref: {
-
-        },
-        index: []
-    }
+const personalMovieDB = {
+    count: numbersOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
 }
 
-obj.job = 'it';
+const a = prompt('Один из последниз просмотренных фильмов?', ''),
+      b = +prompt('На сколько оцените фильм?', ''),
+      c = prompt('Один из последниз просмотренных фильмов?', ''),
+      d = +prompt('На сколько оцените фильм?', '');
 
-console.log(obj.job)
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-
-let incr = 10,
-    decr = 10;
-
-
-// ++incr;
-// --decr;
-
-console.log(++incr);
-console.log(--decr);
+console.log(personalMovieDB);
