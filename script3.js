@@ -176,3 +176,35 @@ function getCoupeNumber(seat) {
 }
 
 getCoupeNumber(33);
+
+
+//целое число минут и возвращает время в нужном формате строки. 
+function getTimeFromMinutes(mins) {
+    if (typeof(mins) !== 'number' || mins < 0 || !Number.isInteger(mins)) {
+        return `Ошибка, проверьте данные`
+    }
+
+    let hours = Math.floor(mins/60);
+    let minutes = mins % 60;
+    let strHours = '';
+
+    switch (hours) {
+        case 0: 
+            strHours = 'часов';
+            break;
+        case 1:
+            strHours = 'час';
+            break;
+        case 2:
+        case 3:
+        case 4:
+            strHours = 'часа';
+            break;
+        default:
+            strHours = 'часов';
+    }
+
+    return `Это ${hours} ${strHours} и ${minutes} минут`;
+}
+
+getTimeFromMinutes(350)
