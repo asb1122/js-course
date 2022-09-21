@@ -144,3 +144,35 @@ console.log(Math.round(num));
 const test = '12.2px';
 console.log(parseInt(test))
 console.log(parseFloat(test))
+
+//объем|площадь куба
+function calculateVolumeAndArea(length) {
+    if (typeof(length) !== 'number' || length <= 0 || !Number.isInteger(length)) {
+        return "При вычислении произошла ошибка";
+    }
+
+    let volume = 0,
+        area = 0;
+    
+    volume = length * length * length;
+    area = 6 * (length * length);
+
+    return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+}
+
+calculateVolumeAndArea(5);
+
+//купе номер
+function getCoupeNumber(seat) {
+    if(typeof(seat) !== 'number' || seat < 0 || !Number.isInteger(seat)) {
+        return "Ошибка. Проверьте правильность введенного номера места";
+    }
+
+    if(seat === 0 || seat > 36) {
+        return 'Таких мест в вагоне не существует'
+    } 
+    
+    return Math.ceil(seat / 4);
+}
+
+getCoupeNumber(33);
