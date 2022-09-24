@@ -208,3 +208,53 @@ function getTimeFromMinutes(mins) {
 }
 
 getTimeFromMinutes(350)
+
+
+// функцию, которая принимает в себя 4 числа и возвращает самое большее из них. Если один из аргументов не является числом или их меньше 4 - возвращается 0.
+
+
+function findMaxNumber(a, b ,c, d) {
+    if (typeof(a) !== 'number' ||
+        typeof(b) !== 'number' ||
+        typeof(c) !== 'number' ||
+        typeof(d) !== 'number') {
+        return 0;
+    } else {
+        return Math.max(a, b ,c, d);
+    }
+}
+
+findMaxNumber(1, 5, 6.6, 10.5);
+findMaxNumber(1, 5, '6', '10');
+
+//фибоначи (без рекурсии)
+
+function fib(num) {
+    if(typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+        return '';
+    }
+
+    let result = '';
+    let first = 0;
+    let second = 1;
+
+    for (let i = 0; i < num; i++) {
+        if (i + 1 === num) {
+            result += `${first}`;
+        } else {
+            result += `${first}`;
+        }
+
+        let third = first + second;
+        first = second;
+        second = third;
+    }
+
+    return result
+}
+
+fib(4)
+fib(7)
+fib('7')
+fib(1)
+fib(0)
